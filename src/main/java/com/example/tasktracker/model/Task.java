@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.time.LocalDate;
+
 @Entity
 public class Task {
 
@@ -13,6 +15,7 @@ public class Task {
     private Long id;
     private String title;
     private boolean completed = false;
+    private LocalDate dueDate;
 
     // Getters and Setters
     public Long getId() {
@@ -27,8 +30,16 @@ public class Task {
         return title;
     }
 
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
     }
 
     public boolean isCompleted() {
